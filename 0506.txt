@@ -1,0 +1,26 @@
+/*
+Vapor Test Suite
+0506: Implicit named return statement
+
+- output
+876
+*/
+
+class Test
+{
+	public static function Find(int32[] array, int32 item) -> int32 index
+	{
+		for (index = 0; index < array::Length; index = index + 1)
+			if (array[index] == item)
+				return;
+	}
+
+	public static function Main()
+	{
+		/* Sum of 1..100 */
+		int32[] array = new int32[1000];
+		for (int32 i = 0; i < array::Length; i = i + 1)
+			array[i] = array::Length - i - 1;
+		Core.Console::WriteLine(Core.Int32::ToString(Find(array, 123)));
+	}
+}

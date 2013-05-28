@@ -1,0 +1,25 @@
+/*
+Vapor Test Suite
+0150: Do while clause
+
+- output
+1234567
+100101101011010000111
+*/
+
+class Test
+{
+	public static function Main()
+	{
+		/* Convert an integer to binary representation */
+		int32 a = 1234567;
+		Core.Console::WriteLine(Core.Int32::ToString(a));
+		Core.String binary = "";
+		do
+		{
+			binary = Core.Int32::ToString(a % 2) + binary;
+			a = a / 2;
+		} while (a > 0);
+		Core.Console::WriteLine(binary);
+	}
+}

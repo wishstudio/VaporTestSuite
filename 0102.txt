@@ -1,0 +1,72 @@
+/*
+Vapor Test Suite
+0102: Logical binop, short-circuit
+
+- output
+Executed condition 1.
+Executed condition 3.
+Executed body 1.
+Executed condition 1.
+Executed condition 3.
+Executed body 2.
+Executed condition 2.
+Not executed body 3.
+*/
+/*
+Executed condition 1.
+Not executed body 4.
+Executed condition 2.
+Executed condition 1.
+Executed condition 2.
+Executed body 5.
+*/
+
+class Test
+{
+	public static function Condition1() -> int32
+	{
+		Core.Console::WriteLine("Executed condition 1.");
+		return 1;
+	}
+
+	public static function Condition2() -> int32
+	{
+		Core.Console::WriteLine("Executed condition 2.");
+		return 0;
+	}
+
+	public static function Condition3() -> int32
+	{
+		Core.Console::WriteLine("Executed condition 3.");
+		return 1;
+	}
+
+	public static function Main()
+	{
+		/* Priority of && is higher than || */
+		if (Condition1() > 0 || Condition2() > 0 && Condition3() > 0)
+			Core.Console::WriteLine("Executed body 1.");
+		else
+			Core.Console::WriteLine("Not executed body 1.");
+
+		if ((Condition1() > 0 || Condition2() > 0) && Condition3() > 0)
+			Core.Console::WriteLine("Executed body 2.");
+		else
+			Core.Console::WriteLine("Not executed body 2.");
+
+		if (Condition2() > 0 && Condition3() > 0 || Condition1() > 0)
+			Core.Console::WriteLine("Executed body 3.");
+		else
+			Core.Console::WriteLine("Not executed body 3.");
+
+/*		if (!(Condition1() > 0 || Condition2() > 0) && Condition3() > 0)
+			Core.Console::WriteLine("Executed body 4.");
+		else
+			Core.Console::WriteLine("Not executed body 4.");
+
+		if (Condition2() > 0 || !(Condition1() > 0 && Condition2() > 0))
+			Core.Console::WriteLine("Executed body 5.");
+		else
+			Core.Console::WriteLine("Not executed body 5.");*/
+	}
+}

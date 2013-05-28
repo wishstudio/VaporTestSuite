@@ -1,0 +1,55 @@
+/*
+Vapor Test Suite
+0250: Break and continue
+
+- output
+3
+4
+5
+=====
+5
+3
+1
+=====
+5
+6
+7
+*/
+
+class Test
+{
+	public static function Main()
+	{
+		int32 h;
+		for (h = 0; h < 10; h = h + 1)
+		{
+			if (h > 5)
+				break;
+			else if (h < 3)
+				continue;
+			Core.Console::WriteLine(Core.Int32::ToString(h));
+		}
+		Core.Console::WriteLine("=====");
+		/* h = 10 at here */
+		while (h > 0)
+		{
+			h = h - 1;
+			if (h % 2 == 0)
+				continue;
+			if (h > 5)
+				break;
+			Core.Console::WriteLine(Core.Int32::ToString(h));
+		}
+		Core.Console::WriteLine("=====");
+		/* h = 0 at here */
+		do
+		{
+			h = h + 1;
+			if (h < 5)
+				continue;
+			if (h > 7)
+				break;
+			Core.Console::WriteLine(Core.Int32::ToString(h));
+		} while (h > 0);
+	}
+}

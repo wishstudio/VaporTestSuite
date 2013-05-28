@@ -1,0 +1,58 @@
+/*
+Vapor Test Suite
+2011: Return values in try finally block
+
+- output
+Finally 0 executed.
+Finally 1 executed.
+This is the value!
+Finally 2 executed.
+The answer is 42
+*/
+
+class MyException: Core.Exception
+{
+	public Core.String message;
+
+	public function .ctor(Core.String message)
+	{
+		this::message = message;
+	}
+}
+
+class Test
+{
+	public static function Func0()
+	{
+		try
+			for (int32 i = 0; i < 100000000; i = i + 1)
+				return;
+		finally
+			Core.Console::WriteLine("Finally 0 executed.");
+	}
+	public static function Func1() -> Core.String
+	{
+		try
+			return "This is the value!";
+		finally
+			Core.Console::WriteLine("Finally 1 executed.");
+	}
+
+	public static function Func2() -> Core.String, int32
+	{
+		try
+			return "The answer is ", 42;
+		finally
+			Core.Console::WriteLine("Finally 2 executed.");
+	}
+
+	public static function Main()
+	{
+		Func0();
+		Core.Console::WriteLine(Func1());
+		Core.String str;
+		int32 i;
+		str, i = Func2();
+		Core.Console::WriteLine(str + Core.Int32::ToString(i));
+	}
+}

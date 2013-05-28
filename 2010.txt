@@ -1,0 +1,40 @@
+/*
+Vapor Test Suite
+2010: Catch exception in subroutine
+
+- output
+Finally 1 executed.
+Hello exception world.
+Finally 2 executed.
+*/
+
+class MyException: Core.Exception
+{
+	public Core.String message;
+
+	public function .ctor(Core.String message)
+	{
+		this::message = message;
+	}
+}
+
+class Test
+{
+	public static function Func()
+	{
+		try
+			throw new MyException("Hello exception world.");
+		finally
+			Core.Console::WriteLine("Finally 1 executed.");
+	}
+
+	public static function Main()
+	{
+		try
+			Func();
+		catch (MyException e)
+			Core.Console::WriteLine(e::message);
+		finally
+			Core.Console::WriteLine("Finally 2 executed.");
+	}
+}

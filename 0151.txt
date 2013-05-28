@@ -1,0 +1,26 @@
+/*
+Vapor Test Suite
+0151: While clause
+
+- output
+7
+6
+5
+4
+3
+2
+1
+*/
+
+class Test
+{
+	public static function Main()
+	{
+		int32 a = 1234567;
+		while (a > 0)
+		{
+			Core.Console::WriteLine(Core.Int32::ToString(a % 10));
+			a = a / 10;
+		}
+	}
+}

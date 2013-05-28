@@ -1,0 +1,31 @@
+/*
+Vapor Test Suite
+0500: Static function
+
+- output
+Calling function...
+It is Func!
+Parameter number is 42
+Called function.
+*/
+
+class Test
+{
+	public static function Func()
+	{
+		Core.Console::WriteLine("It is Func!");
+	}
+
+	public static function Func1(int32 num)
+	{
+		Core.Console::WriteLine("Parameter number is " + Core.Int32::ToString(num));
+	}
+
+	public static function Main()
+	{
+		Core.Console::WriteLine("Calling function...");
+		Func();
+		Func1(42);
+		Core.Console::WriteLine("Called function.");
+	}
+}

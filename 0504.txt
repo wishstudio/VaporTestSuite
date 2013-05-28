@@ -1,0 +1,26 @@
+/*
+Vapor Test Suite
+0504: Named return value
+
+- output
+5050
+*/
+
+class Test
+{
+	public static function Sum(int32[] array) -> int32 sum
+	{
+		sum = 0;
+		for (int32 i = 0; i < array::Length; i = i + 1)
+			sum = sum + array[i];
+	}
+
+	public static function Main()
+	{
+		/* Sum of 1..100 */
+		int32[] array = new int32[100];
+		for (int32 i = 0; i < array::Length; i = i + 1)
+			array[i] = i + 1;
+		Core.Console::WriteLine(Core.Int32::ToString(Sum(array)));
+	}
+}

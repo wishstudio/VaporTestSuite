@@ -1,0 +1,61 @@
+/*
+Vapor Test Suite
+2006: Break/continue inside a try finally block
+
+- output
+Finally 0
+Finally 1
+Finally 2
+Body 3
+Finally 3
+Body 4
+Finally 4
+Body 5
+Finally 5
+Finally 6
+=====
+Body 3
+Body 4
+Body 5
+Finally
+*/
+
+class Test
+{
+	public static function Main()
+	{
+		for (int32 i = 0; i < 10; i = i + 1)
+		{
+			try
+			{
+				if (i < 3)
+					continue;
+				if (i > 5)
+					break;
+				Core.Console::WriteLine("Body " + Core.Int32::ToString(i));
+			}
+			finally
+			{
+				Core.Console::WriteLine("Finally " + Core.Int32::ToString(i));
+			}
+		}
+
+		Core.Console::WriteLine("=====");
+
+		try
+		{
+			for (int32 i = 0; i < 10; i = i + 1)
+			{
+				if (i < 3)
+					continue;
+				if (i > 5)
+					break;
+				Core.Console::WriteLine("Body " + Core.Int32::ToString(i));
+			}
+		}
+		finally
+		{
+			Core.Console::WriteLine("Finally");
+		}
+	}
+}

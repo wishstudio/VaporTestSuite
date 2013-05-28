@@ -1,0 +1,32 @@
+/*
+Vapor Test Suite
+2000: Basic throw and catch
+
+- output
+Hello exception world.
+*/
+
+class MyException: Core.Exception
+{
+	public Core.String message;
+
+	public function .ctor(Core.String message)
+	{
+		this::message = message;
+	}
+}
+
+class Test
+{
+	public static function Main()
+	{
+		try
+		{
+			throw new MyException("Hello exception world.");
+		}
+		catch (MyException e)
+		{
+			Core.Console::WriteLine(e::message);
+		}
+	}
+}

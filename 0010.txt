@@ -1,0 +1,18 @@
+/*
+Vapor Test Suite
+0010: Variable definition
+
+- output
+10
+20
+*/
+
+class Test
+{
+	public static function Main()
+	{
+		int32 a = 10, b = 20;
+		Core.Console::WriteLine(Core.Int32::ToString(a));
+		Core.Console::WriteLine(Core.Int32::ToString(b));
+	}
+}

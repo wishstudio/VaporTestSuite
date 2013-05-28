@@ -1,0 +1,26 @@
+/*
+Vapor Test Suite
+0600: Instance constructor and fields
+
+- output
+123
+456
+*/
+
+class Test
+{
+	public Core.String a, b;
+
+	public function .ctor(int32 a, int32 b)
+	{
+		this::a = Core.Int32::ToString(a);
+		this::b = Core.Int32::ToString(b);
+	}
+
+	public static function Main()
+	{
+		Test test = new Test(123, 456);
+		Core.Console::WriteLine(test::a);
+		Core.Console::WriteLine(test::b);
+	}
+}

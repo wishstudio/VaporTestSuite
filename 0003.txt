@@ -1,0 +1,16 @@
+/*
+Vapor Test Suite
+0003: String concat
+
+- output
+The answer is 42.
+*/
+
+class Test
+{
+	public static function Main()
+	{
+		Core.String number = Core.Int32::ToString(42);
+		Core.Console::WriteLine("The answer is " + number + ".");
+	}
+}

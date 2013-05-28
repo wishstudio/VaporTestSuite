@@ -1,0 +1,15 @@
+/*
+Vapor Test Suite
+0002: Print number
+
+- output
+42
+*/
+
+class Test
+{
+	public static function Main()
+	{
+		Core.Console::WriteLine(Core.Int32::ToString(42));
+	}
+}

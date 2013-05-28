@@ -1,0 +1,25 @@
+/*
+Vapor Test Suite
+0101: Logical binop, if/else combination
+
+- output
+Case 4.
+*/
+
+class Test
+{
+	public static function Main()
+	{
+		int32 a = 10;
+		if (a > 0 && a < 10)
+			Core.Console::WriteLine("Case 1.");
+		else if (a > 10 && a < 20)
+			Core.Console::WriteLine("Case 2.");
+		else if (a > 20 && a < 30)
+			Core.Console::WriteLine("Case 3.");
+		else if (a == 0 || a == 10)
+			Core.Console::WriteLine("Case 4.");
+		else if (a > 30)
+			Core.Console::WriteLine("Case 5.");
+	}
+}

@@ -1,0 +1,33 @@
+/*
+Vapor Test Suite
+0011: Variable scoping
+
+- output
+10
+20
+20
+30
+20
+20
+*/
+
+class Test
+{
+	static int32 a, b;
+
+	public static function Main()
+	{
+		a = 10;
+		b = 20;
+		Core.Console::WriteLine(Core.Int32::ToString(a));
+		Core.Console::WriteLine(Core.Int32::ToString(b));
+		{
+			int32 b = 30;
+			a = 20;
+			Core.Console::WriteLine(Core.Int32::ToString(a));
+			Core.Console::WriteLine(Core.Int32::ToString(b));
+		}
+		Core.Console::WriteLine(Core.Int32::ToString(a));
+		Core.Console::WriteLine(Core.Int32::ToString(b));
+	}
+}

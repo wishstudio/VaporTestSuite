@@ -1,0 +1,51 @@
+/*
+Vapor Test Suite
+1000: Array for fibonacci numbers
+
+- output
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+55
+89
+144
+233
+377
+610
+987
+1597
+2584
+4181
+6765
+10946
+17711
+28657
+46368
+75025
+121393
+196418
+317811
+514229
+*/
+
+class Test
+{
+	public static function Main()
+	{
+		int32[] array = new int32[30];
+		array[0] = 0;
+		array[1] = 1;
+		for (int32 i = 2; i < array::Length; i = i + 1)
+			array[i] = array[i - 1] + array[i - 2];
+
+		for (int32 i = 0; i < array::Length; i = i + 1)
+			Core.Console::WriteLine(Core.Int32::ToString(array[i]));
+	}
+}

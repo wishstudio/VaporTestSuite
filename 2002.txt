@@ -1,0 +1,42 @@
+/*
+Vapor Test Suite
+2002: Multiple catch clause and catch ordering
+
+- output
+Catch body 2.
+*/
+
+class MyException: Core.Exception
+{
+}
+
+class MyException2: MyException
+{
+}
+
+class MyException3: Core.Exception
+{
+}
+
+class Test
+{
+	public static function Main()
+	{
+		try
+		{
+			throw new MyException2();
+		}
+		catch (MyException3 e)
+		{
+			Core.Console::WriteLine("Catch body 1.");
+		}
+		catch (MyException e)
+		{
+			Core.Console::WriteLine("Catch body 2.");
+		}
+		catch (MyException2 e)
+		{
+			Core.Console::WriteLine("Catch body 3.");
+		}
+	}
+}

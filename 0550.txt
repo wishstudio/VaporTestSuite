@@ -1,0 +1,23 @@
+/*
+Vapor Test Suite
+0550: Static fields
+
+- output
+The answer is 123
+*/
+
+class Test
+{
+	static Core.String a;
+	static Core.String b;
+	static int32 _b;
+
+	public static function Main()
+	{
+		a = "The answer is ";
+		_b = 123;
+		b = Core.Int32::ToString(_b);
+		Core.Console::Write(a);
+		Core.Console::WriteLine(b);
+	}
+}

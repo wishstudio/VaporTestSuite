@@ -1,0 +1,33 @@
+/*
+Vapor Test Suite
+0015: Int32 arithmetic
+
+- output
+123
+42
+165
+81
+5166
+2
+39
+*/
+
+class Test
+{
+	public static function Main()
+	{
+		int32 _1 = 123, _2 = 42;
+		int32 a = _1 + _2;
+		int32 b = _1 - _2;
+		int32 c = _1 * _2;
+		int32 d = _1 / _2;
+		int32 e = _1 % _2;
+		Core.Console::WriteLine(Core.Int32::ToString(_1));
+		Core.Console::WriteLine(Core.Int32::ToString(_2));
+		Core.Console::WriteLine(Core.Int32::ToString(a));
+		Core.Console::WriteLine(Core.Int32::ToString(b));
+		Core.Console::WriteLine(Core.Int32::ToString(c));
+		Core.Console::WriteLine(Core.Int32::ToString(d));
+		Core.Console::WriteLine(Core.Int32::ToString(e));
+	}
+}

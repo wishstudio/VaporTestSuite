@@ -1,0 +1,40 @@
+/*
+Vapor Test Suite
+2001: Catch derived class
+
+- output
+"Hello exception world." From MyException2!
+*/
+
+class MyException: Core.Exception
+{
+	public Core.String message;
+
+	public function .ctor(Core.String message)
+	{
+		this::message = message;
+	}
+}
+
+class MyException2: MyException
+{
+	public function .ctor(Core.String message)
+	{
+		this::message = "\"" + message + "\" From MyException2!";
+	}
+}
+
+class Test
+{
+	public static function Main()
+	{
+		try
+		{
+			throw new MyException2("Hello exception world.");
+		}
+		catch (MyException e)
+		{
+			Core.Console::WriteLine(e::message);
+		}
+	}
+}

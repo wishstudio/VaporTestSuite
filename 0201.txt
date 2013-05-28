@@ -1,0 +1,42 @@
+/*
+Vapor Test Suite
+0201: For clause, variable scoping
+
+- output
+100
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+100
+100
+100
+100
+100
+100
+100
+100
+100
+100
+100
+*/
+
+class Test
+{
+	public static function Main()
+	{
+		int32 i = 100;
+		Core.Console::WriteLine(Core.Int32::ToString(i));
+		for (int32 i = 0; i < 10; i = i + 1)
+			Core.Console::WriteLine(Core.Int32::ToString(i));
+		for (int32 j = 0; j < 10; j = j + 1)
+			Core.Console::WriteLine(Core.Int32::ToString(i));
+		Core.Console::WriteLine(Core.Int32::ToString(i));
+	}
+}

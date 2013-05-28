@@ -1,0 +1,46 @@
+/*
+Vapor Test Suite
+0501: Static function with parameter and return value
+
+- output
+Sum of 123 and 456 is 579
+Max of 123 and 456 is 456
+Min of 123 and 456 is 123
+*/
+
+class Test
+{
+	public static function Output(int32 a, int32 b, int32 c, Core.String name)
+	{
+		Core.Console::WriteLine(name + " of " + Core.Int32::ToString(a) + " and "
+			+ Core.Int32::ToString(b) + " is " + Core.Int32::ToString(c));
+	}
+	public static function Max(int32 a, int32 b) -> int32
+	{
+		if (a > b)
+			return a;
+		else
+			return b;
+	}
+
+	public static function Min(int32 a, int32 b) -> int32
+	{
+		if (a > b)
+			return b;
+		else
+			return a;
+	}
+
+	public static function Sum(int32 a, int32 b) -> int32
+	{
+		return a + b;
+	}
+
+	public static function Main()
+	{
+		int32 a = 123, b = 456;
+		Output(a, b, Sum(a, b), "Sum");
+		Output(a, b, Max(a, b), "Max");
+		Output(a, b, Min(a, b), "Min");
+	}
+}

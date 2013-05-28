@@ -1,0 +1,15 @@
+/*
+Vapor Test Suite
+0001: Hello world
+
+- output
+Hello world.
+*/
+
+class Test
+{
+	public static function Main()
+	{
+		Core.Console::WriteLine("Hello world.");
+	}
+}

@@ -1,0 +1,35 @@
+/*
+Vapor Test Suite
+0400: Basic list manipulation
+
+- output
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+55
+89
+144
+233
+377
+*/
+
+class Test
+{
+	public static function Main()
+	{
+		/* Calculate fibonacci sequence */
+		int32 a = 0, b = 1;
+		for (int32 i = 0; i < 15; i = i + 1)
+		{
+			Core.Console::WriteLine(Core.Int32::ToString(a));
+			a, b = b, a + b;
+		}
+	}
+}
