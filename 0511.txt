@@ -1,0 +1,40 @@
+/*
+Vapor Test Suite
+0510: Chosen of best overrided function
+
+- output
+Func.Parent
+Func.Child
+Func.Child
+Func.Child
+*/
+
+class Parent {}
+class Child: Parent {}
+class ChildChild: Child {}
+
+class Test
+{
+	public static function Func(Parent obj)
+	{
+		Core.Console::WriteLine("Func.Parent");
+	}
+
+	public static function Func(Child obj)
+	{
+		Core.Console::WriteLine("Func.Child");
+	}
+
+	public static function Func(Core.Object obj)
+	{
+		Core.Console::WriteLine("Func.Object");
+	}
+
+	public static function Main()
+	{
+		Func(new Parent());
+		Func(new Child());
+		Func(new ChildChild());
+		Func(null);
+	}
+}

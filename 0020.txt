@@ -1,0 +1,33 @@
+/*
+Vapor Test Suite
+0020: Int8 arithmetic
+
+- output
+123
+-42
+81
+-91
+-46
+-2
+39
+*/
+
+class Test
+{
+	public static function Main()
+	{
+		int8 _1 = 123, _2 = -42;
+		int8 a = _1 + _2;
+		int8 b = _1 - _2;
+		int8 c = _1 * _2;
+		int8 d = _1 / _2;
+		int8 e = _1 % _2;
+		Core.Console::WriteLine(Core.Int32::ToString(_1));
+		Core.Console::WriteLine(Core.Int32::ToString(_2));
+		Core.Console::WriteLine(Core.Int32::ToString(a));
+		Core.Console::WriteLine(Core.Int32::ToString(b));
+		Core.Console::WriteLine(Core.Int32::ToString(c));
+		Core.Console::WriteLine(Core.Int32::ToString(d));
+		Core.Console::WriteLine(Core.Int32::ToString(e));
+	}
+}

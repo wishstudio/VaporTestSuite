@@ -19,11 +19,9 @@ function RunTest
         [String] $out
     )
     $t = " `n"
-    Write-Host $Global:core
     & ..\Aqua.exe Vapor ..\Vapor_stage1.aqua - $Global:core "$file" "aqua_${file}"
     & ..\Assembler "aqua_${file}" "$file.aqua"
     $o = ($in.Trim($t)) | & ..\Aqua Test "$file.aqua"
-    Write-Host $o
     Remove-Item "aqua_${file}"
     Remove-Item "$file.aqua"
     $o = [String]::Join("`n", $o)

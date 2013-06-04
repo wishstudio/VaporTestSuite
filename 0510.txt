@@ -1,0 +1,39 @@
+/*
+Vapor Test Suite
+0510: Overloaded functions
+
+- output
+Func1.
+Func2.42
+Func3.Life
+Func3...
+*/
+
+class Test
+{
+	public static function Func()
+	{
+		Core.Console::WriteLine("Func1.");
+	}
+
+	public static function Func(int32 value)
+	{
+		Core.Console::WriteLine("Func2." + Core.Int32::ToString(value));
+	}
+
+	public static function Func(Core.String value)
+	{
+		if (value == null)
+			Core.Console::WriteLine("Func3...");
+		else
+			Core.Console::WriteLine("Func3." + value);
+	}
+
+	public static function Main()
+	{
+		Func();
+		Func(42);
+		Func("Life");
+		Func(null);
+	}
+}

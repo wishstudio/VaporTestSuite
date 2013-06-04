@@ -1,6 +1,6 @@
 /*
 Vapor Test Suite
-0015: Int32 arithmetic
+0030: Int32 arithmetic
 
 - output
 123

@@ -1,6 +1,6 @@
 /*
 Vapor Test Suite
-0016: Int32 binop
+0031: Int32 binop
 
 - output
 123
