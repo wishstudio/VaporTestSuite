@@ -1,0 +1,44 @@
+/*
+Vapor Test Suite
+0700: is operator
+
+- output
+0 is parent.
+1 is parent.
+1 is child.
+2 is parent.
+3 is parent.
+3 is child.
+*/
+
+class Parent {}
+class Child: Parent {}
+class Child2: Parent {}
+class Child3: Child {}
+
+class Test
+{
+	public static function Main()
+	{
+		Parent obj0 = new Parent();
+		Parent obj1 = new Child();
+		Parent obj2 = new Child2();
+		Parent obj3 = new Child3();
+		if (obj0 is Parent)
+			Core.Console::WriteLine("0 is parent.");
+		if (obj0 is Child)
+			Core.Console::WriteLine("0 is child.");
+		if (obj1 is Parent)
+			Core.Console::WriteLine("1 is parent.");
+		if (obj1 is Child)
+			Core.Console::WriteLine("1 is child.");
+		if (obj2 is Parent)
+			Core.Console::WriteLine("2 is parent.");
+		if (obj2 is Child)
+			Core.Console::WriteLine("2 is child.");
+		if (obj3 is Parent)
+			Core.Console::WriteLine("3 is parent.");
+		if (obj3 is Child)
+			Core.Console::WriteLine("3 is child.");
+	}
+}
