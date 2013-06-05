@@ -1,0 +1,34 @@
+/*
+Vapor Test Suite
+0610: Virtual methods
+
+- output
+10
+20
+*/
+
+class Parent
+{
+	public virtual function GetNumber() -> int32
+	{
+		return 10;
+	}
+}
+
+class Child: Parent
+{
+	public override function GetNumber() -> int32
+	{
+		return 20;
+	}
+}
+
+class Test
+{
+	public static function Main()
+	{
+		Parent obj1 = new Parent(), obj2 = new Child();
+		Core.Console::WriteLine(Core.Int32::ToString(obj1::GetNumber()));
+		Core.Console::WriteLine(Core.Int32::ToString(obj2::GetNumber()));
+	}
+}

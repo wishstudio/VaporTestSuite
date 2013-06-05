@@ -1,0 +1,28 @@
+/*
+Vapor Test Suite
+0611: Abstract methods
+
+- output
+20
+*/
+
+class Parent
+{
+	public abstract function GetNumber() -> int32;
+}
+
+class Child: Parent
+{
+	public override function GetNumber() -> int32
+	{
+		return 20;
+	}
+}
+
+class Test
+{
+	public static function Main()
+	{
+		Core.Console::WriteLine(Core.Int32::ToString(new Child()::GetNumber()));
+	}
+}
