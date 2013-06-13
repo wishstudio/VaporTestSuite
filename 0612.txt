@@ -1,0 +1,76 @@
+/*
+Vapor Test Suite
+0612: Multiple override
+
+- output
+DoWork from C2.
+String from C1.
+2
+DoWork from C2.
+String from C3.
+3
+DoWork from C4.
+String from C3.
+3
+*/
+
+class C1
+{
+	public abstract function DoWork();
+	public abstract function GetNumber() -> int32;
+	public virtual function GetString() -> Core.String
+	{
+		return "String from C1.";
+	}
+}
+
+class C2: C1
+{
+	public override function DoWork()
+	{
+		Core.Console::WriteLine("DoWork from C2.");
+	}
+
+	public override function GetNumber() -> int32
+	{
+		return 2;
+	}
+}
+
+class C3: C2
+{
+	public override function GetNumber() -> int32
+	{
+		return 3;
+	}
+
+	public override function GetString() -> Core.String
+	{
+		return "String from C3.";
+	}
+}
+
+class C4: C3
+{
+	public override function DoWork()
+	{
+		Core.Console::WriteLine("DoWork from C4.");
+	}
+}
+
+class Test
+{
+	public static function RunTest(C2 obj)
+	{
+		obj::DoWork();
+		Core.Console::WriteLine(obj::GetString());
+		Core.Console::WriteLine(Core.Int32::ToString(obj::GetNumber()));
+	}
+
+	public static function Main()
+	{
+		RunTest(new C2());
+		RunTest(new C3());
+		RunTest(new C4());
+	}
+}
