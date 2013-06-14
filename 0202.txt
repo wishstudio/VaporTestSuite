@@ -1,0 +1,55 @@
+/*
+Vapor Test Suite
+0202: Forever loop, etc.
+
+- output
+0
+1
+2
+3
+4
+5
+===
+0
+1
+2
+===
+42
+===
+0
+1
+2
+*/
+
+class Test
+{
+	public static function Main()
+	{
+		for (int32 i = 0; ; i = i + 1)
+		{
+			if (i > 5)
+				break;
+			Core.Console::WriteLine(Core.Int32::ToString(i));
+		}
+		Core.Console::WriteLine("===");
+		for (int32 i = 0;;)
+		{
+			Core.Console::WriteLine(Core.Int32::ToString(i));
+			i = i + 1;
+			if (i == 3)
+				break;
+			continue;
+			i = i + 2;
+		}
+		Core.Console::WriteLine("===");
+		for (;;)
+		{
+			Core.Console::WriteLine("42");
+			break;
+		}
+		Core.Console::WriteLine("===");
+		int32 i = 0;
+		for (; i < 3; i = i + 1)
+			Core.Console::WriteLine(Core.Int32::ToString(i));
+	}
+}
