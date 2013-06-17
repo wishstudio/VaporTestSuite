@@ -4,9 +4,11 @@ Vapor Test Suite
 
 - output
 Func1.
-Func2.42
-Func3.Life
-Func3...
+Func2.True
+Func2.False
+Func3.42
+Func4.Life
+Func4...
 */
 
 class Test
@@ -16,22 +18,32 @@ class Test
 		Core.Console::WriteLine("Func1.");
 	}
 
+	public static function Func(bool value)
+	{
+		if (value)
+			Core.Console::WriteLine("Func2.True");
+		else
+			Core.Console::WriteLine("Func2.False");
+	}
+
 	public static function Func(int32 value)
 	{
-		Core.Console::WriteLine("Func2." + Core.Int32::ToString(value));
+		Core.Console::WriteLine("Func3." + Core.Int32::ToString(value));
 	}
 
 	public static function Func(Core.String value)
 	{
 		if (value == null)
-			Core.Console::WriteLine("Func3...");
+			Core.Console::WriteLine("Func4...");
 		else
-			Core.Console::WriteLine("Func3." + value);
+			Core.Console::WriteLine("Func4." + value);
 	}
 
 	public static function Main()
 	{
 		Func();
+		Func(true);
+		Func(2 > 3);
 		Func(42);
 		Func("Life");
 		Func(null);
