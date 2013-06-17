@@ -1,0 +1,32 @@
+/*
+Vapor Test Suite
+0105: bool op
+
+- output
+OK
+OK
+OK
+*/
+
+class Test
+{
+	public static function Main()
+	{
+		int32 a = 10, b = 0;
+		bool c = a > b;
+		if (c)
+			Core.Console::WriteLine("OK");
+		else
+			Core.Console::WriteLine("BAD");
+		bool d = false;
+		if (c || d)
+			Core.Console::WriteLine("OK");
+		else
+			Core.Console::WriteLine("BAD");
+		bool e = true;
+		if (c && e)
+			Core.Console::WriteLine("OK");
+		else
+			Core.Console::WriteLine("BAD");
+	}
+}
