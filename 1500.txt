@@ -1,0 +1,27 @@
+/*
+Vapor Test Suite
+1500: Basic pointer usage
+
+- output
+41
+42
+43
+*/
+
+class Test
+{
+	public static function AddOne(int32* number)
+	{
+		*number = *number + 1;
+	}
+
+	public static function Main()
+	{
+		int32 x = 41;
+		Core.Console::WriteLine(Core.Int32::ToString(x));
+		AddOne(&x);
+		Core.Console::WriteLine(Core.Int32::ToString(x));
+		AddOne(&x);
+		Core.Console::WriteLine(Core.Int32::ToString(x));
+	}
+}

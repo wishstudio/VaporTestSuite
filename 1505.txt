@@ -1,0 +1,40 @@
+/*
+Vapor Test Suite
+1500: Pointer addition arithmetic
+
+- output
+2147483641
+2147483642
+2147483643
+2147483644
+2147483645
+2147483646
+2147483647
+-2147483648
+-2147483647
+-2147483646
+*/
+
+class Test
+{
+	public static function AddOne(int32* ptr, int32 count)
+	{
+		for (int32 i = 0; i < count; i = i + 1)
+		{
+			*ptr = *ptr + 1;
+			ptr = ptr + 1;
+		}
+	}
+
+	public static function Main()
+	{
+		int32 N = 10;
+		int32[] nums = new int32[N];
+		for (int32 i = 0; i < N; i = i + 1)
+			nums[i] = 2147483640;
+		for (int32 i = 0; i < N; i = i + 1)
+			AddOne(&nums[i], N - i);
+		for (int32 i = 0; i < N; i = i + 1)
+			Core.Console::WriteLine(Core.Int32::ToString(nums[i]));
+	}
+}
