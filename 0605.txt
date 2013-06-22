@@ -1,0 +1,41 @@
+/*
+Vapor Test Suite
+0605: Overloaded instance constructors
+
+- output
+Hello world.
+String
+42
+*/
+
+class Test
+{
+	public Core.String text;
+
+	public function .ctor()
+	{
+		this::text = "Hello world.";
+	}
+
+	public function .ctor(Core.String text)
+	{
+		this::text = text;
+	}
+
+	public function .ctor(int32 num)
+	{
+		this::text = Core.Int32::ToString(num);
+	}
+
+	public static function OutputTest(Test obj)
+	{
+		Core.Console::WriteLine(obj::text);
+	}
+
+	public static function Main()
+	{
+		OutputTest(new Test());
+		OutputTest(new Test("String"));
+		OutputTest(new Test(42));
+	}
+}
