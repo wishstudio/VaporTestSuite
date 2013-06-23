@@ -1,0 +1,54 @@
+/*
+Vapor Test Suite
+0751: Multiple overloads for single operator
+
+- output
+10
+20
+30
+42
+42
+*/
+
+class Value
+{
+	private int32 num;
+
+	public function .ctor(int32 num)
+	{
+		this::num = num;
+	}
+
+	public function Print()
+	{
+		Core.Console::WriteLine(Core.Int32::ToString(num));
+	}
+
+	public static operator + (Value l, Value r) -> Value
+	{
+		return new Value(l::num + r::num);
+	}
+
+	public static operator + (Value l, int32 r) -> Value
+	{
+		return new Value(l::num + r);
+	}
+
+	public static operator + (int32 l, Value r) -> Value
+	{
+		return new Value(l + r::num);
+	}
+}
+
+class Test
+{
+	public static function Main()
+	{
+		Value v1 = new Value(10), v2 = new Value(20);
+		v1::Print();
+		v2::Print();
+		(v1 + v2)::Print();
+		(v1 + 32)::Print();
+		(22 + v2)::Print();
+	}
+}
