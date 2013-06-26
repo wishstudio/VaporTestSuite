@@ -34,13 +34,13 @@ class DerivedDerivedClass: DerivedClass
 
 class Test
 {
-	public static function DoWork(BaseClass x)
+	public static DoWork(BaseClass x)
 	{
 		x::Value = 10;
 		Core.Console::WriteLine("" + x::Value);
 	}
 
-	public static function Main()
+	public static Main()
 	{
 		DoWork(new DerivedClass());
 		DoWork(new DerivedDerivedClass());

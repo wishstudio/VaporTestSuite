@@ -18,7 +18,7 @@ class Child3: Child {}
 
 class Test
 {
-	public static function Main()
+	public static Main()
 	{
 		Parent obj0 = new Parent();
 		Parent obj1 = new Child();

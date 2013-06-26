@@ -9,7 +9,7 @@ Vapor Test Suite
 
 class Parent
 {
-	public virtual function GetNumber() -> int32
+	public virtual GetNumber() -> int32
 	{
 		return 10;
 	}
@@ -17,7 +17,7 @@ class Parent
 
 class Child: Parent
 {
-	public override function GetNumber() -> int32
+	public override GetNumber() -> int32
 	{
 		return 20;
 	}
@@ -25,7 +25,7 @@ class Child: Parent
 
 class Test
 {
-	public static function Main()
+	public static Main()
 	{
 		Parent obj1 = new Parent(), obj2 = new Child();
 		Core.Console::WriteLine(Core.Int32::ToString(obj1::GetNumber()));

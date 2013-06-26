@@ -10,7 +10,7 @@ class MyException: Core.Exception
 {
 	public Core.String message;
 
-	public function .ctor(Core.String message)
+	public .ctor(Core.String message)
 	{
 		this::message = message;
 	}
@@ -18,7 +18,7 @@ class MyException: Core.Exception
 
 class MyException2: MyException
 {
-	public function .ctor(Core.String message)
+	public .ctor(Core.String message)
 	{
 		this::message = "\"" + message + "\" From MyException2!";
 	}
@@ -26,7 +26,7 @@ class MyException2: MyException
 
 class Test
 {
-	public static function Main()
+	public static Main()
 	{
 		try
 		{

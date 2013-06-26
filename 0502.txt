@@ -8,7 +8,7 @@ Vapor Test Suite
 
 class Test
 {
-	public static function Fibonacci(int32 n) -> int32
+	public static Fibonacci(int32 n) -> int32
 	{
 		if (n == 0)
 			return 0;
@@ -18,7 +18,7 @@ class Test
 			return Fibonacci(n - 1) + Fibonacci(n - 2);
 	}
 
-	public static function Main()
+	public static Main()
 	{
 		Core.Console::WriteLine(Core.Int32::ToString(Fibonacci(10)));
 	}
