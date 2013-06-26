@@ -1,0 +1,43 @@
+/*
+Vapor Test Suite
+0652: Virtual and override property
+
+- output
+10
+11
+*/
+
+class BaseClass
+{
+	private int32 v;
+
+	public virtual int32 Value {
+		get { return v; }
+		set { v = value; }
+	}
+}
+
+class DerivedClass: BaseClass
+{
+	private int32 v;
+
+	public override int32 Value {
+		get { return v; }
+		set { v = value + 1; }
+	}
+}
+
+class Test
+{
+	public static function DoWork(BaseClass x)
+	{
+		x::Value = 10;
+		Core.Console::WriteLine("" + x::Value);
+	}
+
+	public static function Main()
+	{
+		DoWork(new BaseClass());
+		DoWork(new DerivedClass());
+	}
+}

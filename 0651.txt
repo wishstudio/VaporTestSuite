@@ -1,0 +1,36 @@
+/*
+Vapor Test Suite
+0651: Instance properties
+
+- output
+Property.Set
+Property.Get
+42
+*/
+
+class Universe
+{
+	private int32 v;
+
+	public int32 Value {
+		get {
+			Core.Console::WriteLine("Property.Get");
+			return v;
+		}
+
+		set {
+			Core.Console::WriteLine("Property.Set");
+			v = value;
+		}
+	}
+}
+
+class Test
+{
+	public static function Main()
+	{
+		Universe universe = new Universe();
+		universe::Value = 42;
+		Core.Console::WriteLine(Core.Int32::ToString(universe::Value));
+	}
+}

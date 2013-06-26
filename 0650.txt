@@ -1,0 +1,45 @@
+/*
+Vapor Test Suite
+0650: Static properties
+
+- output
+Value is 42
+Value is 10
+*/
+
+class Universe
+{
+	private int32 value;
+
+	public function .ctor(int32 value)
+	{
+		this::value = value;
+	}
+
+	public function DoWork()
+	{
+		Core.Console::WriteLine("Value is " + value);
+	}
+}
+
+class Test
+{
+	private static Universe universe;
+
+	private static Universe Universe {
+		get {
+			if (universe == null)
+				universe = new Universe(42);
+			return universe;
+		}
+
+		set { universe = value; }
+	}
+
+	public static function Main()
+	{
+		Universe::DoWork();
+		Universe = new Universe(10);
+		Universe::DoWork();
+	}
+}

@@ -1,0 +1,48 @@
+/*
+Vapor Test Suite
+0652: Abstract property
+
+- output
+11
+12
+*/
+
+class BaseClass
+{
+	public abstract int32 Value { get; set; }
+}
+
+class DerivedClass: BaseClass
+{
+	private int32 v;
+
+	public override int32 Value {
+		get { return v; }
+		set { v = value + 1; }
+	}
+}
+
+class DerivedDerivedClass: DerivedClass
+{
+	private int32 v;
+
+	public override int32 Value {
+		get { return v; }
+		set { v = value + 2; }
+	}
+}
+
+class Test
+{
+	public static function DoWork(BaseClass x)
+	{
+		x::Value = 10;
+		Core.Console::WriteLine("" + x::Value);
+	}
+
+	public static function Main()
+	{
+		DoWork(new DerivedClass());
+		DoWork(new DerivedDerivedClass());
+	}
+}
