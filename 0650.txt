@@ -11,7 +11,7 @@ class Universe
 {
 	private int32 value;
 
-	public .ctor(int32 value)
+	public (int32 value)
 	{
 		this::value = value;
 	}

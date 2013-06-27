@@ -11,7 +11,7 @@ class Test
 {
 	public Core.String a, b;
 
-	public .ctor(int32 a, int32 b)
+	public (int32 a, int32 b)
 	{
 		this::a = Core.Int32::ToString(a);
 		this::b = Core.Int32::ToString(b);

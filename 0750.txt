@@ -16,7 +16,7 @@ class Value
 {
 	private int32 num;
 
-	public .ctor(int32 num)
+	public (int32 num)
 	{
 		this::num = num;
 	}

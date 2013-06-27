@@ -12,17 +12,17 @@ class Test
 {
 	public Core.String text;
 
-	public .ctor()
+	public ()
 	{
 		this::text = "Hello world.";
 	}
 
-	public .ctor(Core.String text)
+	public (Core.String text)
 	{
 		this::text = text;
 	}
 
-	public .ctor(int32 num)
+	public (int32 num)
 	{
 		this::text = Core.Int32::ToString(num);
 	}
