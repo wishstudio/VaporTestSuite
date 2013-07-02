@@ -1,0 +1,37 @@
+/*
+Vapor Test Suite
+0106: bool as return value
+
+- output
+OK
+OK
+*/
+
+using Core;
+
+class Test
+{
+	public static IsGreater(int32 x, int32 y) -> bool
+	{
+		return x > y;
+	}
+
+	public static IsLess(int32 x, int32 y) -> bool
+	{
+		bool z = x < y;
+		return z;
+	}
+
+	public static Main()
+	{
+		if (IsGreater(20, 10))
+			Console.WriteLine("OK");
+		else
+			Console.WriteLine("BAD");
+
+		if (IsLess(20, 10))
+			Console.WriteLine("BAD");
+		else
+			Console.WriteLine("OK");
+	}
+}
