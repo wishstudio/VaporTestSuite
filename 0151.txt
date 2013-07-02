@@ -12,6 +12,8 @@ Vapor Test Suite
 1
 */
 
+using Core;
+
 class Test
 {
 	public static Main()
@@ -19,7 +21,7 @@ class Test
 		int32 a = 1234567;
 		while (a > 0)
 		{
-			Core.Console::WriteLine(Core.Int32::ToString(a % 10));
+			Console.WriteLine(Int32.ToString(a % 10));
 			a = a / 10;
 		}
 	}

@@ -7,18 +7,20 @@ Value is 42
 Value is 10
 */
 
+using Core;
+
 class Universe
 {
 	private int32 value;
 
 	public (int32 value)
 	{
-		this::value = value;
+		this.value = value;
 	}
 
 	public DoWork()
 	{
-		Core.Console::WriteLine("Value is " + value);
+		Console.WriteLine("Value is " + value);
 	}
 }
 
@@ -38,8 +40,8 @@ class Test
 
 	public static Main()
 	{
-		Universe::DoWork();
+		Universe.DoWork();
 		Universe = new Universe(10);
-		Universe::DoWork();
+		Universe.DoWork();
 	}
 }

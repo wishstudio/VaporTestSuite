@@ -20,6 +20,8 @@ Body 5
 Finally
 */
 
+using Core;
+
 class Test
 {
 	public static Main()
@@ -32,15 +34,15 @@ class Test
 					continue;
 				if (i > 5)
 					break;
-				Core.Console::WriteLine("Body " + Core.Int32::ToString(i));
+				Console.WriteLine("Body " + Int32.ToString(i));
 			}
 			finally
 			{
-				Core.Console::WriteLine("Finally " + Core.Int32::ToString(i));
+				Console.WriteLine("Finally " + Int32.ToString(i));
 			}
 		}
 
-		Core.Console::WriteLine("=====");
+		Console.WriteLine("=====");
 
 		try
 		{
@@ -50,12 +52,12 @@ class Test
 					continue;
 				if (i > 5)
 					break;
-				Core.Console::WriteLine("Body " + Core.Int32::ToString(i));
+				Console.WriteLine("Body " + Int32.ToString(i));
 			}
 		}
 		finally
 		{
-			Core.Console::WriteLine("Finally");
+			Console.WriteLine("Finally");
 		}
 	}
 }

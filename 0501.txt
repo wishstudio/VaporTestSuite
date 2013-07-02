@@ -8,12 +8,14 @@ Max of 123 and 456 is 456
 Min of 123 and 456 is 123
 */
 
+using Core;
+
 class Test
 {
-	public static Output(int32 a, int32 b, int32 c, Core.String name)
+	public static Output(int32 a, int32 b, int32 c, String name)
 	{
-		Core.Console::WriteLine(name + " of " + Core.Int32::ToString(a) + " and "
-			+ Core.Int32::ToString(b) + " is " + Core.Int32::ToString(c));
+		Console.WriteLine(name + " of " + Int32.ToString(a) + " and "
+			+ Int32.ToString(b) + " is " + Int32.ToString(c));
 	}
 	public static Max(int32 a, int32 b) -> int32
 	{

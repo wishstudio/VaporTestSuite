@@ -6,6 +6,8 @@ Vapor Test Suite
 20
 */
 
+using Core;
+
 class Parent
 {
 	public abstract GetNumber() -> int32;
@@ -23,6 +25,6 @@ class Test
 {
 	public static Main()
 	{
-		Core.Console::WriteLine(Core.Int32::ToString(new Child()::GetNumber()));
+		Console.WriteLine(Int32.ToString(new Child().GetNumber()));
 	}
 }

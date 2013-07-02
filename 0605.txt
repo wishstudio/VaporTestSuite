@@ -8,28 +8,30 @@ String
 42
 */
 
+using Core;
+
 class Test
 {
-	public Core.String text;
+	public String text;
 
 	public ()
 	{
-		this::text = "Hello world.";
+		this.text = "Hello world.";
 	}
 
-	public (Core.String text)
+	public (String text)
 	{
-		this::text = text;
+		this.text = text;
 	}
 
 	public (int32 num)
 	{
-		this::text = Core.Int32::ToString(num);
+		this.text = Int32.ToString(num);
 	}
 
 	public static OutputTest(Test obj)
 	{
-		Core.Console::WriteLine(obj::text);
+		Console.WriteLine(obj.text);
 	}
 
 	public static Main()

@@ -6,7 +6,9 @@ Vapor Test Suite
 Catch body 2.
 */
 
-class MyException: Core.Exception
+using Core;
+
+class MyException: Exception
 {
 }
 
@@ -14,7 +16,7 @@ class MyException2: MyException
 {
 }
 
-class MyException3: Core.Exception
+class MyException3: Exception
 {
 }
 
@@ -28,15 +30,15 @@ class Test
 		}
 		catch (MyException3 e)
 		{
-			Core.Console::WriteLine("Catch body 1.");
+			Console.WriteLine("Catch body 1.");
 		}
 		catch (MyException e)
 		{
-			Core.Console::WriteLine("Catch body 2.");
+			Console.WriteLine("Catch body 2.");
 		}
 		catch (MyException2 e)
 		{
-			Core.Console::WriteLine("Catch body 3.");
+			Console.WriteLine("Catch body 3.");
 		}
 	}
 }

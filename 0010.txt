@@ -7,12 +7,14 @@ Vapor Test Suite
 20
 */
 
+using Core;
+
 class Test
 {
 	public static Main()
 	{
 		int32 a = 10, b = 20;
-		Core.Console::WriteLine(Core.Int32::ToString(a));
-		Core.Console::WriteLine(Core.Int32::ToString(b));
+		Console.WriteLine(Int32.ToString(a));
+		Console.WriteLine(Int32.ToString(b));
 	}
 }

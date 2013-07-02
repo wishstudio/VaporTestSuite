@@ -12,6 +12,8 @@ Vapor Test Suite
 39
 */
 
+using Core;
+
 class Test
 {
 	public static Main()
@@ -22,12 +24,12 @@ class Test
 		int8 c = _1 * _2;
 		int8 d = _1 / _2;
 		int8 e = _1 % _2;
-		Core.Console::WriteLine(Core.Int32::ToString(_1));
-		Core.Console::WriteLine(Core.Int32::ToString(_2));
-		Core.Console::WriteLine(Core.Int32::ToString(a));
-		Core.Console::WriteLine(Core.Int32::ToString(b));
-		Core.Console::WriteLine(Core.Int32::ToString(c));
-		Core.Console::WriteLine(Core.Int32::ToString(d));
-		Core.Console::WriteLine(Core.Int32::ToString(e));
+		Console.WriteLine(Int32.ToString(_1));
+		Console.WriteLine(Int32.ToString(_2));
+		Console.WriteLine(Int32.ToString(a));
+		Console.WriteLine(Int32.ToString(b));
+		Console.WriteLine(Int32.ToString(c));
+		Console.WriteLine(Int32.ToString(d));
+		Console.WriteLine(Int32.ToString(e));
 	}
 }

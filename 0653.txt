@@ -7,6 +7,8 @@ Vapor Test Suite
 12
 */
 
+using Core;
+
 class BaseClass
 {
 	public abstract int32 Value { get; set; }
@@ -36,8 +38,8 @@ class Test
 {
 	public static DoWork(BaseClass x)
 	{
-		x::Value = 10;
-		Core.Console::WriteLine("" + x::Value);
+		x.Value = 10;
+		Console.WriteLine("" + x.Value);
 	}
 
 	public static Main()

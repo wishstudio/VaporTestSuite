@@ -20,6 +20,8 @@ Vapor Test Suite
 377
 */
 
+using Core;
+
 class Test
 {
 	public static Main()
@@ -28,7 +30,7 @@ class Test
 		int32 a = 0, b = 1;
 		for (int32 i = 0; i < 15; i = i + 1)
 		{
-			Core.Console::WriteLine(Core.Int32::ToString(a));
+			Console.WriteLine(Int32.ToString(a));
 			a, b = b, a + b;
 		}
 	}

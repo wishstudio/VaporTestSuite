@@ -12,43 +12,45 @@ Vapor Test Suite
 10
 */
 
+using Core;
+
 class Value
 {
 	private int32 num;
 
 	public (int32 num)
 	{
-		this::num = num;
+		this.num = num;
 	}
 
 	public Print()
 	{
-		Core.Console::WriteLine(Core.Int32::ToString(num));
+		Console.WriteLine(Int32.ToString(num));
 	}
 
 	public static + (Value l, Value r) -> Value
 	{
-		return new Value(l::num + r::num);
+		return new Value(l.num + r.num);
 	}
 
 	public static - (Value l, Value r) -> Value
 	{
-		return new Value(l::num - r::num);
+		return new Value(l.num - r.num);
 	}
 
 	public static * (Value l, Value r) -> Value
 	{
-		return new Value(l::num * r::num);
+		return new Value(l.num * r.num);
 	}
 
 	public static / (Value l, Value r) -> Value
 	{
-		return new Value(l::num / r::num);
+		return new Value(l.num / r.num);
 	}
 
 	public static % (Value l, Value r) -> Value
 	{
-		return new Value(l::num % r::num);
+		return new Value(l.num % r.num);
 	}
 }
 
@@ -57,12 +59,12 @@ class Test
 	public static Main()
 	{
 		Value v1 = new Value(10), v2 = new Value(20);
-		v1::Print();
-		v2::Print();
-		(v1 + v2)::Print();
-		(v1 - v2)::Print();
-		(v1 * v2)::Print();
-		(v1 / v2)::Print();
-		(v1 % v2)::Print();
+		v1.Print();
+		v2.Print();
+		(v1 + v2).Print();
+		(v1 - v2).Print();
+		(v1 * v2).Print();
+		(v1 / v2).Print();
+		(v1 % v2).Print();
 	}
 }

@@ -9,6 +9,8 @@ Func.Child
 Func.Child
 */
 
+using Core;
+
 class Parent {}
 class Child: Parent {}
 class ChildChild: Child {}
@@ -17,17 +19,17 @@ class Test
 {
 	public static Func(Parent obj)
 	{
-		Core.Console::WriteLine("Func.Parent");
+		Console.WriteLine("Func.Parent");
 	}
 
 	public static Func(Child obj)
 	{
-		Core.Console::WriteLine("Func.Child");
+		Console.WriteLine("Func.Child");
 	}
 
-	public static Func(Core.Object obj)
+	public static Func(Object obj)
 	{
-		Core.Console::WriteLine("Func.Object");
+		Console.WriteLine("Func.Object");
 	}
 
 	public static Main()

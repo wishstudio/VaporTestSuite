@@ -7,20 +7,22 @@ Vapor Test Suite
 456
 */
 
+using Core;
+
 class Test
 {
-	public Core.String a, b;
+	public String a, b;
 
 	public (int32 a, int32 b)
 	{
-		this::a = Core.Int32::ToString(a);
-		this::b = Core.Int32::ToString(b);
+		this.a = Int32.ToString(a);
+		this.b = Int32.ToString(b);
 	}
 
 	public static Main()
 	{
 		Test test = new Test(123, 456);
-		Core.Console::WriteLine(test::a);
-		Core.Console::WriteLine(test::b);
+		Console.WriteLine(test.a);
+		Console.WriteLine(test.b);
 	}
 }

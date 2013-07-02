@@ -27,16 +27,18 @@ Vapor Test Suite
 100
 */
 
+using Core;
+
 class Test
 {
 	public static Main()
 	{
 		int32 i = 100;
-		Core.Console::WriteLine(Core.Int32::ToString(i));
+		Console.WriteLine(Int32.ToString(i));
 		for (int32 i = 0; i < 10; i = i + 1)
-			Core.Console::WriteLine(Core.Int32::ToString(i));
+			Console.WriteLine(Int32.ToString(i));
 		for (int32 j = 0; j < 10; j = j + 1)
-			Core.Console::WriteLine(Core.Int32::ToString(i));
-		Core.Console::WriteLine(Core.Int32::ToString(i));
+			Console.WriteLine(Int32.ToString(i));
+		Console.WriteLine(Int32.ToString(i));
 	}
 }

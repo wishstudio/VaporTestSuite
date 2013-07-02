@@ -6,10 +6,12 @@ Vapor Test Suite
 42
 */
 
+using Core;
+
 class Test
 {
 	public static Main()
 	{
-		Core.Console::WriteLine(Core.Int32::ToString(42));
+		Console.WriteLine(Int32.ToString(42));
 	}
 }

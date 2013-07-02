@@ -6,12 +6,14 @@ Vapor Test Suite
 5050
 */
 
+using Core;
+
 class Test
 {
 	public static Sum(int32[] array) -> int32 sum
 	{
 		sum = 0;
-		for (int32 i = 0; i < array::Length; i = i + 1)
+		for (int32 i = 0; i < array.Length; i = i + 1)
 			sum = sum + array[i];
 	}
 
@@ -19,8 +21,8 @@ class Test
 	{
 		/* Sum of 1..100 */
 		int32[] array = new int32[100];
-		for (int32 i = 0; i < array::Length; i = i + 1)
+		for (int32 i = 0; i < array.Length; i = i + 1)
 			array[i] = i + 1;
-		Core.Console::WriteLine(Core.Int32::ToString(Sum(array)));
+		Console.WriteLine(Int32.ToString(Sum(array)));
 	}
 }

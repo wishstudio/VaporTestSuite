@@ -15,6 +15,8 @@ Vapor Test Suite
 -2147483646
 */
 
+using Core;
+
 class Test
 {
 	public static AddOne(int32* ptr, int32 count)
@@ -35,6 +37,6 @@ class Test
 		for (int32 i = 0; i < N; i = i + 1)
 			AddOne(&nums[i], N - i);
 		for (int32 i = 0; i < N; i = i + 1)
-			Core.Console::WriteLine(Core.Int32::ToString(nums[i]));
+			Console.WriteLine(Int32.ToString(nums[i]));
 	}
 }

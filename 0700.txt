@@ -11,6 +11,8 @@ Vapor Test Suite
 3 is child.
 */
 
+using Core;
+
 class Parent {}
 class Child: Parent {}
 class Child2: Parent {}
@@ -25,20 +27,20 @@ class Test
 		Parent obj2 = new Child2();
 		Parent obj3 = new Child3();
 		if (obj0 is Parent)
-			Core.Console::WriteLine("0 is parent.");
+			Console.WriteLine("0 is parent.");
 		if (obj0 is Child)
-			Core.Console::WriteLine("0 is child.");
+			Console.WriteLine("0 is child.");
 		if (obj1 is Parent)
-			Core.Console::WriteLine("1 is parent.");
+			Console.WriteLine("1 is parent.");
 		if (obj1 is Child)
-			Core.Console::WriteLine("1 is child.");
+			Console.WriteLine("1 is child.");
 		if (obj2 is Parent)
-			Core.Console::WriteLine("2 is parent.");
+			Console.WriteLine("2 is parent.");
 		if (obj2 is Child)
-			Core.Console::WriteLine("2 is child.");
+			Console.WriteLine("2 is child.");
 		if (obj3 is Parent)
-			Core.Console::WriteLine("3 is parent.");
+			Console.WriteLine("3 is parent.");
 		if (obj3 is Child)
-			Core.Console::WriteLine("3 is child.");
+			Console.WriteLine("3 is child.");
 	}
 }

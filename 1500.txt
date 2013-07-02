@@ -8,6 +8,8 @@ Vapor Test Suite
 43
 */
 
+using Core;
+
 class Test
 {
 	public static AddOne(int32* number)
@@ -18,10 +20,10 @@ class Test
 	public static Main()
 	{
 		int32 x = 41;
-		Core.Console::WriteLine(Core.Int32::ToString(x));
+		Console.WriteLine(Int32.ToString(x));
 		AddOne(&x);
-		Core.Console::WriteLine(Core.Int32::ToString(x));
+		Console.WriteLine(Int32.ToString(x));
 		AddOne(&x);
-		Core.Console::WriteLine(Core.Int32::ToString(x));
+		Console.WriteLine(Int32.ToString(x));
 	}
 }

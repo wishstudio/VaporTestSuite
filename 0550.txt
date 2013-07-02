@@ -6,18 +6,20 @@ Vapor Test Suite
 The answer is 123
 */
 
+using Core;
+
 class Test
 {
-	static Core.String a;
-	static Core.String b;
+	static String a;
+	static String b;
 	static int32 _b;
 
 	public static Main()
 	{
 		a = "The answer is ";
 		_b = 123;
-		b = Core.Int32::ToString(_b);
-		Core.Console::Write(a);
-		Core.Console::WriteLine(b);
+		b = Int32.ToString(_b);
+		Console.Write(a);
+		Console.WriteLine(b);
 	}
 }

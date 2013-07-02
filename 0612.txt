@@ -14,11 +14,13 @@ String from C3.
 3
 */
 
+using Core;
+
 class C1
 {
 	public abstract DoWork();
 	public abstract GetNumber() -> int32;
-	public virtual GetString() -> Core.String
+	public virtual GetString() -> String
 	{
 		return "String from C1.";
 	}
@@ -28,7 +30,7 @@ class C2: C1
 {
 	public override DoWork()
 	{
-		Core.Console::WriteLine("DoWork from C2.");
+		Console.WriteLine("DoWork from C2.");
 	}
 
 	public override GetNumber() -> int32
@@ -44,7 +46,7 @@ class C3: C2
 		return 3;
 	}
 
-	public override GetString() -> Core.String
+	public override GetString() -> String
 	{
 		return "String from C3.";
 	}
@@ -54,7 +56,7 @@ class C4: C3
 {
 	public override DoWork()
 	{
-		Core.Console::WriteLine("DoWork from C4.");
+		Console.WriteLine("DoWork from C4.");
 	}
 }
 
@@ -62,9 +64,9 @@ class Test
 {
 	public static RunTest(C2 obj)
 	{
-		obj::DoWork();
-		Core.Console::WriteLine(obj::GetString());
-		Core.Console::WriteLine(Core.Int32::ToString(obj::GetNumber()));
+		obj.DoWork();
+		Console.WriteLine(obj.GetString());
+		Console.WriteLine(Int32.ToString(obj.GetNumber()));
 	}
 
 	public static Main()

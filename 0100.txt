@@ -8,6 +8,8 @@ Executed 3.
 Executed 6.
 */
 
+using Core;
+
 class Test
 {
 	public static Main()
@@ -15,19 +17,19 @@ class Test
 		int32 a = 10, b = 20;
 
 		if (a > b)
-			Core.Console::WriteLine("Executed 1.");
+			Console.WriteLine("Executed 1.");
 		else
-			Core.Console::WriteLine("Executed 2.");
+			Console.WriteLine("Executed 2.");
 
 		if (a < b)
-			Core.Console::WriteLine("Executed 3.");
+			Console.WriteLine("Executed 3.");
 		else
-			Core.Console::WriteLine("Executed 4.");
+			Console.WriteLine("Executed 4.");
 
 		if (a == b)
-			Core.Console::WriteLine("Executed 5.");
+			Console.WriteLine("Executed 5.");
 
 		if (a != b)
-			Core.Console::WriteLine("Executed 6.");
+			Console.WriteLine("Executed 6.");
 	}
 }

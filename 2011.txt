@@ -10,13 +10,15 @@ Finally 2 executed.
 The answer is 42
 */
 
-class MyException: Core.Exception
-{
-	public Core.String message;
+using Core;
 
-	public (Core.String message)
+class MyException: Exception
+{
+	public String message;
+
+	public (String message)
 	{
-		this::message = message;
+		this.message = message;
 	}
 }
 
@@ -28,31 +30,31 @@ class Test
 			for (int32 i = 0; i < 100000000; i = i + 1)
 				return;
 		finally
-			Core.Console::WriteLine("Finally 0 executed.");
+			Console.WriteLine("Finally 0 executed.");
 	}
-	public static Func1() -> Core.String
+	public static Func1() -> String
 	{
 		try
 			return "This is the value!";
 		finally
-			Core.Console::WriteLine("Finally 1 executed.");
+			Console.WriteLine("Finally 1 executed.");
 	}
 
-	public static Func2() -> Core.String, int32
+	public static Func2() -> String, int32
 	{
 		try
 			return "The answer is ", 42;
 		finally
-			Core.Console::WriteLine("Finally 2 executed.");
+			Console.WriteLine("Finally 2 executed.");
 	}
 
 	public static Main()
 	{
 		Func0();
-		Core.Console::WriteLine(Func1());
-		Core.String str;
+		Console.WriteLine(Func1());
+		String str;
 		int32 i;
 		str, i = Func2();
-		Core.Console::WriteLine(str + Core.Int32::ToString(i));
+		Console.WriteLine(str + Int32.ToString(i));
 	}
 }

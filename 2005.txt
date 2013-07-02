@@ -7,13 +7,15 @@ Hello exception world.
 Finally executed.
 */
 
-class MyException: Core.Exception
-{
-	public Core.String message;
+using Core;
 
-	public (Core.String message)
+class MyException: Exception
+{
+	public String message;
+
+	public (String message)
 	{
-		this::message = message;
+		this.message = message;
 	}
 }
 
@@ -27,11 +29,11 @@ class Test
 		}
 		catch (MyException e)
 		{
-			Core.Console::WriteLine(e::message);
+			Console.WriteLine(e.message);
 		}
 		finally
 		{
-			Core.Console::WriteLine("Finally executed.");
+			Console.WriteLine("Finally executed.");
 		}
 	}
 }

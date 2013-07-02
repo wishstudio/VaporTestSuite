@@ -8,6 +8,8 @@ OK
 OK
 */
 
+using Core;
+
 class Test
 {
 	public static Main()
@@ -15,18 +17,18 @@ class Test
 		int32 a = 10, b = 0;
 		bool c = a > b;
 		if (c)
-			Core.Console::WriteLine("OK");
+			Console.WriteLine("OK");
 		else
-			Core.Console::WriteLine("BAD");
+			Console.WriteLine("BAD");
 		bool d = false;
 		if (c || d)
-			Core.Console::WriteLine("OK");
+			Console.WriteLine("OK");
 		else
-			Core.Console::WriteLine("BAD");
+			Console.WriteLine("BAD");
 		bool e = true;
 		if (c && e)
-			Core.Console::WriteLine("OK");
+			Console.WriteLine("OK");
 		else
-			Core.Console::WriteLine("BAD");
+			Console.WriteLine("BAD");
 	}
 }

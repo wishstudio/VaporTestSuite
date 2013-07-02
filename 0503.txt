@@ -7,6 +7,8 @@ Vapor Test Suite
 24 42
 */
 
+using Core;
+
 class Test
 {
 	public static Reverse(int32 a, int32 b) -> int32, int32
@@ -17,8 +19,8 @@ class Test
 	public static Main()
 	{
 		int32 a = 42, b = 24;
-		Core.Console::WriteLine(Core.Int32::ToString(a) + " " + Core.Int32::ToString(b));
+		Console.WriteLine(Int32.ToString(a) + " " + Int32.ToString(b));
 		a, b = Reverse(a, b);
-		Core.Console::WriteLine(Core.Int32::ToString(a) + " " + Core.Int32::ToString(b));
+		Console.WriteLine(Int32.ToString(a) + " " + Int32.ToString(b));
 	}
 }

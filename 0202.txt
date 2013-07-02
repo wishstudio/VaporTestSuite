@@ -21,6 +21,8 @@ Vapor Test Suite
 2
 */
 
+using Core;
+
 class Test
 {
 	public static Main()
@@ -29,27 +31,27 @@ class Test
 		{
 			if (i > 5)
 				break;
-			Core.Console::WriteLine(Core.Int32::ToString(i));
+			Console.WriteLine(Int32.ToString(i));
 		}
-		Core.Console::WriteLine("===");
+		Console.WriteLine("===");
 		for (int32 i = 0;;)
 		{
-			Core.Console::WriteLine(Core.Int32::ToString(i));
+			Console.WriteLine(Int32.ToString(i));
 			i = i + 1;
 			if (i == 3)
 				break;
 			continue;
 			i = i + 2;
 		}
-		Core.Console::WriteLine("===");
+		Console.WriteLine("===");
 		for (;;)
 		{
-			Core.Console::WriteLine("42");
+			Console.WriteLine("42");
 			break;
 		}
-		Core.Console::WriteLine("===");
+		Console.WriteLine("===");
 		int32 i = 0;
 		for (; i < 3; i = i + 1)
-			Core.Console::WriteLine(Core.Int32::ToString(i));
+			Console.WriteLine(Int32.ToString(i));
 	}
 }

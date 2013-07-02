@@ -9,23 +9,25 @@ Parameter number is 42
 Called function.
 */
 
+using Core;
+
 class Test
 {
 	public static Func()
 	{
-		Core.Console::WriteLine("It is Func!");
+		Console.WriteLine("It is Func!");
 	}
 
 	public static Func1(int32 num)
 	{
-		Core.Console::WriteLine("Parameter number is " + Core.Int32::ToString(num));
+		Console.WriteLine("Parameter number is " + Int32.ToString(num));
 	}
 
 	public static Main()
 	{
-		Core.Console::WriteLine("Calling function...");
+		Console.WriteLine("Calling function...");
 		Func();
 		Func1(42);
-		Core.Console::WriteLine("Called function.");
+		Console.WriteLine("Called function.");
 	}
 }

@@ -11,32 +11,34 @@ Func4.Life
 Func4...
 */
 
+using Core;
+
 class Test
 {
 	public static Func()
 	{
-		Core.Console::WriteLine("Func1.");
+		Console.WriteLine("Func1.");
 	}
 
 	public static Func(bool value)
 	{
 		if (value)
-			Core.Console::WriteLine("Func2.True");
+			Console.WriteLine("Func2.True");
 		else
-			Core.Console::WriteLine("Func2.False");
+			Console.WriteLine("Func2.False");
 	}
 
 	public static Func(int32 value)
 	{
-		Core.Console::WriteLine("Func3." + Core.Int32::ToString(value));
+		Console.WriteLine("Func3." + Int32.ToString(value));
 	}
 
-	public static Func(Core.String value)
+	public static Func(String value)
 	{
 		if (value == null)
-			Core.Console::WriteLine("Func4...");
+			Console.WriteLine("Func4...");
 		else
-			Core.Console::WriteLine("Func4." + value);
+			Console.WriteLine("Func4." + value);
 	}
 
 	public static Main()

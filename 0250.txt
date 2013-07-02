@@ -16,6 +16,8 @@ Vapor Test Suite
 7
 */
 
+using Core;
+
 class Test
 {
 	public static Main()
@@ -27,9 +29,9 @@ class Test
 				break;
 			else if (h < 3)
 				continue;
-			Core.Console::WriteLine(Core.Int32::ToString(h));
+			Console.WriteLine(Int32.ToString(h));
 		}
-		Core.Console::WriteLine("=====");
+		Console.WriteLine("=====");
 		/* h = 10 at here */
 		while (h > 0)
 		{
@@ -38,9 +40,9 @@ class Test
 				continue;
 			if (h > 5)
 				break;
-			Core.Console::WriteLine(Core.Int32::ToString(h));
+			Console.WriteLine(Int32.ToString(h));
 		}
-		Core.Console::WriteLine("=====");
+		Console.WriteLine("=====");
 		/* h = 0 at here */
 		do
 		{
@@ -49,7 +51,7 @@ class Test
 				continue;
 			if (h > 7)
 				break;
-			Core.Console::WriteLine(Core.Int32::ToString(h));
+			Console.WriteLine(Int32.ToString(h));
 		} while (h > 0);
 	}
 }

@@ -7,19 +7,21 @@ Vapor Test Suite
 100101101011010000111
 */
 
+using Core;
+
 class Test
 {
 	public static Main()
 	{
 		/* Convert an integer to binary representation */
 		int32 a = 1234567;
-		Core.Console::WriteLine(Core.Int32::ToString(a));
-		Core.String binary = "";
+		Console.WriteLine(Int32.ToString(a));
+		String binary = "";
 		do
 		{
-			binary = Core.Int32::ToString(a % 2) + binary;
+			binary = Int32.ToString(a % 2) + binary;
 			a = a / 2;
 		} while (a > 0);
-		Core.Console::WriteLine(binary);
+		Console.WriteLine(binary);
 	}
 }

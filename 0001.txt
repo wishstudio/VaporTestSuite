@@ -6,10 +6,12 @@ Vapor Test Suite
 Hello world.
 */
 
+using Core;
+
 class Test
 {
 	public static Main()
 	{
-		Core.Console::WriteLine("Hello world.");
+		Console.WriteLine("Hello world.");
 	}
 }

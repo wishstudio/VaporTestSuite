@@ -6,11 +6,13 @@ Vapor Test Suite
 876
 */
 
+using Core;
+
 class Test
 {
 	public static Find(int32[] array, int32 item) -> int32 index
 	{
-		for (index = 0; index < array::Length; index = index + 1)
+		for (index = 0; index < array.Length; index = index + 1)
 			if (array[index] == item)
 				return;
 	}
@@ -19,8 +21,8 @@ class Test
 	{
 		/* Sum of 1..100 */
 		int32[] array = new int32[1000];
-		for (int32 i = 0; i < array::Length; i = i + 1)
-			array[i] = array::Length - i - 1;
-		Core.Console::WriteLine(Core.Int32::ToString(Find(array, 123)));
+		for (int32 i = 0; i < array.Length; i = i + 1)
+			array[i] = array.Length - i - 1;
+		Console.WriteLine(Int32.ToString(Find(array, 123)));
 	}
 }

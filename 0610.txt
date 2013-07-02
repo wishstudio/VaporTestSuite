@@ -7,6 +7,8 @@ Vapor Test Suite
 20
 */
 
+using Core;
+
 class Parent
 {
 	public virtual GetNumber() -> int32
@@ -28,7 +30,7 @@ class Test
 	public static Main()
 	{
 		Parent obj1 = new Parent(), obj2 = new Child();
-		Core.Console::WriteLine(Core.Int32::ToString(obj1::GetNumber()));
-		Core.Console::WriteLine(Core.Int32::ToString(obj2::GetNumber()));
+		Console.WriteLine(Int32.ToString(obj1.GetNumber()));
+		Console.WriteLine(Int32.ToString(obj2.GetNumber()));
 	}
 }

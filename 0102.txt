@@ -21,23 +21,25 @@ Executed condition 2.
 Executed body 5.
 */
 
+using Core;
+
 class Test
 {
 	public static Condition1() -> int32
 	{
-		Core.Console::WriteLine("Executed condition 1.");
+		Console.WriteLine("Executed condition 1.");
 		return 1;
 	}
 
 	public static Condition2() -> int32
 	{
-		Core.Console::WriteLine("Executed condition 2.");
+		Console.WriteLine("Executed condition 2.");
 		return 0;
 	}
 
 	public static Condition3() -> int32
 	{
-		Core.Console::WriteLine("Executed condition 3.");
+		Console.WriteLine("Executed condition 3.");
 		return 1;
 	}
 
@@ -45,28 +47,28 @@ class Test
 	{
 		/* Priority of && is higher than || */
 		if (Condition1() > 0 || Condition2() > 0 && Condition3() > 0)
-			Core.Console::WriteLine("Executed body 1.");
+			Console.WriteLine("Executed body 1.");
 		else
-			Core.Console::WriteLine("Not executed body 1.");
+			Console.WriteLine("Not executed body 1.");
 
 		if ((Condition1() > 0 || Condition2() > 0) && Condition3() > 0)
-			Core.Console::WriteLine("Executed body 2.");
+			Console.WriteLine("Executed body 2.");
 		else
-			Core.Console::WriteLine("Not executed body 2.");
+			Console.WriteLine("Not executed body 2.");
 
 		if (Condition2() > 0 && Condition3() > 0 || Condition1() > 0)
-			Core.Console::WriteLine("Executed body 3.");
+			Console.WriteLine("Executed body 3.");
 		else
-			Core.Console::WriteLine("Not executed body 3.");
+			Console.WriteLine("Not executed body 3.");
 
 /*		if (!(Condition1() > 0 || Condition2() > 0) && Condition3() > 0)
-			Core.Console::WriteLine("Executed body 4.");
+			Console.WriteLine("Executed body 4.");
 		else
-			Core.Console::WriteLine("Not executed body 4.");
+			Console.WriteLine("Not executed body 4.");
 
 		if (Condition2() > 0 || !(Condition1() > 0 && Condition2() > 0))
-			Core.Console::WriteLine("Executed body 5.");
+			Console.WriteLine("Executed body 5.");
 		else
-			Core.Console::WriteLine("Not executed body 5.");*/
+			Console.WriteLine("Not executed body 5.");*/
 	}
 }
