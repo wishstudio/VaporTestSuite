@@ -11,8 +11,6 @@ Executed condition 3.
 Executed body 2.
 Executed condition 2.
 Not executed body 3.
-*/
-/*
 Executed condition 1.
 Not executed body 4.
 Executed condition 2.
@@ -61,7 +59,7 @@ class Test
 		else
 			Console.WriteLine("Not executed body 3.");
 
-/*		if (!(Condition1() > 0 || Condition2() > 0) && Condition3() > 0)
+		if (!(Condition1() > 0 || Condition2() > 0) && Condition3() > 0)
 			Console.WriteLine("Executed body 4.");
 		else
 			Console.WriteLine("Not executed body 4.");
@@ -69,6 +67,6 @@ class Test
 		if (Condition2() > 0 || !(Condition1() > 0 && Condition2() > 0))
 			Console.WriteLine("Executed body 5.");
 		else
-			Console.WriteLine("Not executed body 5.");*/
+			Console.WriteLine("Not executed body 5.");
 	}
 }
