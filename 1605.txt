@@ -1,0 +1,46 @@
+/*
+Vapor Test Suite
+1605: Valuetype pointer usage
+
+- output
+42
+24
+128
+128
+42
+24
+*/
+
+using Core;
+using Core.Native;
+
+struct A
+{
+	public int32 x, y, z;
+
+	public PrintNumber()
+	{
+		Console.WriteLine(Int32.ToString(x));
+		Console.WriteLine(Int32.ToString(y));
+		Console.WriteLine(Int32.ToString(z));
+	}
+}
+
+class Test
+{
+	public static Main()
+	{
+		/* TODO: sizeof */
+		A* a = [A*] Memory.AllocateMemory(100);
+		a.x = 42;
+		a.y = 24;
+		a.z = 128;
+		a.PrintNumber();
+
+		int32* b = [int32*] Memory.AllocateMemory(100);
+		*b = 128;
+		*(b + 1) = 42;
+		*(b + 2) = 24;
+		([A*] b).PrintNumber();
+	}
+}
