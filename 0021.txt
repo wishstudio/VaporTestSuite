@@ -1,15 +1,15 @@
 /*
 Vapor Test Suite
-0020: Int8 arithmetic
+0021: Int8 binop
 
 - output
 123
--42
+42
+42
+123
 81
--91
--46
--2
-39
+-124
+-43
 */
 
 using Core;
@@ -18,12 +18,15 @@ class Test
 {
 	public static Main()
 	{
-		int8 _1 = 123, _2 = -42;
-		int8 a = _1 + _2;
-		int8 b = _1 - _2;
-		int8 c = _1 * _2;
-		int8 d = _1 / _2;
-		int8 e = _1 % _2;
+		int8 _1 = 123, _2 = 42;
+		int8 a = _1 & _2;
+		int8 b = _1 | _2;
+		int8 c = _1 ^ _2;
+		int8 d = ~_1;
+		int8 e = ~_2;
+		/* int8 f = _1 << _2; */
+		/* int8 g = _1 >> _2; */
+		/* int8 h = _1 >>> _2; */
 		Console.WriteLine(Int8.ToString(_1));
 		Console.WriteLine(Int8.ToString(_2));
 		Console.WriteLine(Int8.ToString(a));

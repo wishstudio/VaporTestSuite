@@ -1,0 +1,26 @@
+/*
+Vapor Test Suite
+0022: Int8 comparison
+
+- output
+GOOD
+WORK
+*/
+
+using Core;
+
+class Test
+{
+	public static Main()
+	{
+		int8 a = 127, b = 0, c = -127;
+		if (a < b)
+			Console.WriteLine("BAD");
+		if (c < b)
+			Console.WriteLine("GOOD");
+		if (a < c)
+			Console.WriteLine("BAD");
+		if (a <= a)
+			Console.WriteLine("WORK");
+	}
+}
