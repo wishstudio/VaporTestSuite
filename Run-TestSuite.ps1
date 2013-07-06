@@ -108,7 +108,7 @@ Set-Location $PSScriptRoot
 
 $Global:core = New-Object System.Collections.Generic.List[System.String]
 
-$list = Get-ChildItem "..\Aqua\Vapor\Core" -Filter "*.txt" -Recurse
+$list = Get-ChildItem "..\Aqua\Core" -Filter "*.txt" -Recurse
 
 foreach ($file in $list)
 {
