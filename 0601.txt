@@ -1,0 +1,74 @@
+/*
+Vapor Test Suite
+0601: Static constructor
+
+- output
+Test1
+Test2
+Test3
+Test4
+*/
+
+using Core;
+
+class Test1
+{
+	public static String x;
+
+	static ()
+	{
+		x = "Test1";
+	}
+}
+
+class Test2
+{
+	private static String x;
+
+	static ()
+	{
+		x = "2";
+	}
+
+	public static GetString() -> String
+	{
+		return "Test" + x;
+	}
+}
+
+class Test3
+{
+	private static String x;
+
+	static ()
+	{
+		x = "Test3";
+	}
+
+	public GetString() -> String
+	{
+		return x;
+	}
+}
+
+class Test4
+{
+	private static String x;
+	public static String X { get { return x; } }
+
+	static ()
+	{
+		x = "Test4";
+	}
+}
+
+class Test
+{
+	public static Main()
+	{
+		Console.WriteLine(Test1.x);
+		Console.WriteLine(Test2.GetString());
+		Console.WriteLine((new Test3()).GetString());
+		Console.WriteLine(Test4.X);
+	}
+}
